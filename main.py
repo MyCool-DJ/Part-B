@@ -23,8 +23,8 @@ def intro():
     #intro  print("--" * 17)
 def run_the_thing():
   print("hello")
-num = list(range(1,13,1))
-print(num)
+  num = list(range(1,13,1))
+  print(num)
 
 
 main()
