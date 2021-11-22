@@ -23,22 +23,33 @@ def intro():
     #intro  print("--" * 17)
 def run_the_thing():
   print("hello")
-num = list(range(1,13,1))
+  num = list(range(1,13,1))
 
-random.shuffle(num)
-print(num)
-for i in range(10):
-	num1 = num[i]
-	num2 = 9
-	num3 = num1*num2
-pick = random.randrange(3)
-print(pick)	
-if pick == 1:
-    print(f"{num3} \u00f7 {num2} = ____",end="\t") 
-    answer = int(input("Answer: "))
-    correct = num1
+  random.shuffle(num)
+  print(num)
+  for i in range(10):
+    num1 = num[i]
+    num2 = 9
+    num3 = num1*num2
+    pick = random.randrange(3)
+    print(pick)	
+    if pick == 0:
+        print(f"{num3} \u00f7 {num2} = ____",end="\t") 
+        answer = int(input("Answer: "))
+        correct = num1
+    elif pick == 1:
+        print(f"____ \u00f7 {num2} = {num1}",end="\t") 
+        answer = int(input("Answer: "))
+        correct = num3
+    else:
+        print(f"{num3} \u00f7 ____ = {num1}",end="\t") 
+        answer = int(input("Answer: "))
+        correct = num2  	
 
-
+    if answer == correct:
+			  print("correct")
+    else:
+      print(f"Good try, but the correct answer is {correct}")
 main()
 
 print("Goodbye!")
