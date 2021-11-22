@@ -31,9 +31,12 @@ for i in range(10):
 	num1 = num[i]
 	num2 = 9
 	num3 = num1*num2
-	print(f"{num1} \u00f7 {num2} = ____",end="\t") 
-	answer = int(input("Answer: "))
-
+pick = random.randrange(3)
+print(pick)	
+if pick == 1:
+    print(f"{num3} \u00f7 {num2} = ____",end="\t") 
+    answer = int(input("Answer: "))
+    correct = num1
 
 
 main()
