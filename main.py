@@ -23,8 +23,17 @@ def intro():
     #intro  print("--" * 17)
 def run_the_thing():
   print("hello")
-  num = list(range(1,13,1))
-  print(num)
+num = list(range(1,13,1))
+
+random.shuffle(num)
+print(num)
+for i in range(10):
+	num1 = num[i]
+	num2 = 9
+	num3 = num1*num2
+	print(f"{num1} \u00f7 {num2} = ____",end="\t") 
+	answer = int(input("Answer: "))
+
 
 
 main()
