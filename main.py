@@ -32,38 +32,48 @@ def run_the_thing():  #this is the function that holds the guts of the program
     print("Please try your best to answer, you got this!"
           )  #postive encouragement helps the user try
     score = 0  #this stores the default value of the score variable as zero.
-    num = list(range(1, 13, 1)) #this variable creates a list in a range of a start of 1 a stop of 13, and a step of 1
-    random.shuffle(num) #this command uses our imported random at the beginning of our code then shuffles the num list
-    for i in range(10): #our for loop that uses I as the counting variable in range 10 which means our code block loops 10 times before exiting
-        num1 = num[i] #holds the value of the counter variable and the num list
-        num2 = 9 #this program is divided by the integer 9 so the value stored is the number 9
-        num3 = num1 * num2 # as we are dividing by we need to times the list value by the number 9, before we can divide by 9
-        pick = random.randrange(3) # we want to mix it up the different ways the questions can ask the calculations for our users and to then have them fill in the blank! We do this with a randrange with 3 as the parameter in the parenthesis.
-        if pick == 0: 
+    num = list(
+        range(1, 13, 1)
+    )  #this variable creates a list in a range of a start of 1 a stop of 13, and a step of 1
+    random.shuffle(
+        num
+    )  #this command uses our imported random at the beginning of our code then shuffles the num list
+    for i in range(
+            10
+    ):  #our for loop that uses I as the counting variable in range 10 which means our code block loops 10 times before exiting
+        num1 = num[
+            i]  #holds the value of the counter variable and the num list
+        num2 = 9  #this program is divided by the integer 9 so the value stored is the number 9
+        num3 = num1 * num2  # as we are dividing by we need to times the list value by the number 9, before we can divide by 9
+        pick = random.randrange(
+            3
+        )  # we want to mix it up the different ways the questions can ask the calculations for our users and to then have them fill in the blank! We do this with a randrange with 3 as the parameter in the parenthesis.
+        if pick == 0:  #if the random function makes a value of zero in the pick variable then this runs...
             print(f"{num3} \u00f7 {num2} = ____", end="\t")
             answer = int(input("Answer: "))
-            correct = num1
-        elif pick == 1:
+            correct = num1  #this tell the user if they were correct
+        elif pick == 1:  #if the random function makes a value of one in the pick variable then this runs...
             print(f"____ \u00f7 {num2} = {num1}", end="\t")
             answer = int(input("Answer: "))
             correct = num3
-        else:
+        else:  #if the first two conditions are not meet then this runs...
             print(f"{num3} \u00f7 ____ = {num1}", end="\t")
             answer = int(input("Answer: "))
             correct = num2
 
-        if answer == correct:
-            score += 1
-            print("correct")
-        else:
-            print(f"Good try, but the correct answer is {correct}")
-    print(f"This is your score {score}")
+        if answer == correct:  #if the answer variable holds equals what the correct varibale holds the following code block will run.
+            score += 1  #this adds 1 to the current value of the score variable
+            print("correct")  #lets the user know if they were correct
+        else:  #if the first condition is not met then this code block runs
+            print(
+                f"Good try, but the correct answer is {correct}"
+            )  #tells the user good try so they don't give up and then gives them the correct answer so they can learn for next time.
+    print(f"This is your score: {score}")  #gives our user their total score
 
 
-#makes scores
 main(
 )  #calls the main function this is needed for the program to fun it controls all the functions inside the main function
 
 print(
-    "Thanks for playing"
+    "Thanks for playing!"
 )  #if the user decides to exit the program they will get a goodby statement as a confirmation
